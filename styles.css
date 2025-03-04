@@ -16,3 +16,8 @@ body {
 .marja-card.active {
     @apply border-green-500 bg-green-50 dark:bg-gray-800;
 }
+Calculation Workflow:
+1. User selects income category
+2. System shows relevant questions
+3. Applies Marja-specific rules
+4. Calculates Khums accordingly
