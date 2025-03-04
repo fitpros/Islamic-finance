@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>خُمس اور زکٰوۃ کیلکولیٹر</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 dark:bg-gray-800">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-900 shadow-lg">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-green-600">🌙 اسلامی فنانس</h1>
+            <div class="flex gap-4">
+                <button id="darkModeToggle" class="p-2 bg-gray-200 rounded">🌞/🌙</button>
+                <select id="languageSelect" class="bg-gray-200 p-2 rounded">
+                    <option value="ar">العربیة</option>
+                    <option value="ur">اردو</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Calculator -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto bg-white dark:bg-gray-700 p-6 rounded-xl shadow">
+            <!-- مرجع سلیکٹر -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6" id="marajaSelector"></div>
+            
+            <!-- کیلکولیٹر فارم -->
+            <form id="khumsForm" class="space-y-4">
+                <input type="number" id="income" placeholder="سالانہ آمدنی" class="w-full p-3 border rounded">
+                <input type="number" id="expenses" placeholder="خرچے" class="w-full p-3 border rounded">
+                <button type="submit" class="w-full bg-green-500 text-white p-3 rounded hover:bg-green-600">
+                    حساب کریں
+                </button>
+            </form>
+
+            <!-- نتائج -->
+            <div id="results" class="mt-6 hidden">
+                <h3 class="text-xl font-bold mb-2">نتیجہ:</h3>
+                <p>خُمس واجب: <span id="khumsAmount" class="text-green-500 font-bold">0</span></p>
+                <button id="downloadPDF" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded">
+                    PDF ڈاؤنلوڈ کریں
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
