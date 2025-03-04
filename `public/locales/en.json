@@ -1,0 +1,11 @@
+{
+  "title": "Islamic Finance Calculator",
+  "income_placeholder": "Annual Income (USD)",
+  "expenses_placeholder": "Expenses (USD)",
+  "calculate_btn": "Calculate Khums",
+  "result_text": "Khums Payable:",
+  "download_btn": "Download PDF Report",
+  "marja_sistani": "Ayatollah Sistani",
+  "marja_khamenei": "Leader Khamenei",
+  "select_marja": "Select Jurist"
+}
