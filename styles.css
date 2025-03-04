@@ -1,0 +1,18 @@
+/* RTL Support */
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Dark Mode Transition */
+body {
+    transition: background-color 0.3s ease;
+}
+
+/* مرجع سلیکشن کا اسٹائل */
+.marja-card {
+    @apply p-4 border rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-600;
+}
+.marja-card.active {
+    @apply border-green-500 bg-green-50 dark:bg-gray-800;
+}
