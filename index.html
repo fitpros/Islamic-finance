@@ -51,3 +51,23 @@
     <script src="/public/assets/script.js"></script>
 </body>
 </html>
+<!-- Add this to your HTML file -->
+<div class="category-selection">
+  <h3 data-translate="select_category">Select Income/Property Type</h3>
+  <select id="category" class="w-full p-3 border rounded mb-4">
+    <option value="salary" data-translate="salary">Monthly Salary</option>
+    <option value="gift" data-translate="gift">Gift/Present</option>
+    <option value="inheritance" data-translate="inheritance">Inheritance</option>
+    <option value="property" data-translate="property">Property Sale</option>
+    <option value="investment" data-translate="investment">Investment Profit</option>
+    <option value="other" data-translate="other">Other</option>
+  </select>
+
+  <!-- Conditional Fields -->
+  <div id="propertyType" class="hidden">
+    <label>
+      <input type="checkbox" id="essentialProperty"> 
+      <span data-translate="primary_residence">Primary Residence</span>
+    </label>
+  </div>
+</div>
