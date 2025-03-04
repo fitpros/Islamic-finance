@@ -72,3 +72,58 @@ function calculateKhums() {
     document.getElementById('khumsAmount').textContent = khums.toFixed(2);
     document.getElementById('results').classList.remove('hidden');
 }
+// Add to your script.js
+const categoryRules = {
+  salary: { taxable: true, needsDeduction: true },
+  gift: { 
+    taxable: (amount) => amount > 2000, // Example threshold
+    needsDeduction: false
+  },
+  inheritance: {
+    taxable: true,
+    deductiblePortion: 0.3 // 30% exempt
+  },
+  property: {
+    taxable: function() {
+      return !document.getElementById('essentialProperty').checked;
+    }
+  },
+  investment: { taxable: true, flatRate: 0.2 },
+  other: { taxable: true }
+};
+
+function calculateByCategory() {
+  const category = document.getElementById('category').value;
+  const amount = parseFloat(document.getElementById('amount').value);
+  let taxableAmount = amount;
+
+  // Apply category-specific rules
+  switch(category) {
+    case 'gift':
+      if(amount <= 2000) taxableAmount = 0;
+      break;
+      
+    case 'inheritance':
+      taxableAmount = amount * 0.7; // 30% exempt
+      break;
+
+    case 'property':
+      if(categoryRules.property.taxable()) {
+        taxableAmount = amount;
+      } else {
+        taxableAmount = 0;
+      }
+      break;
+  }
+
+  return taxableAmount * 0.2; // 20% Khums
+}
+
+// Update UI based on category selection
+document.getElementById('category').addEventListener('change', function() {
+  document.getElementById('propertyType').classList.toggle('hidden', this.value !== 'property');
+});
+// Add Marja check to rules
+if(selectedMarja === 'khamenei' && category === 'gift') {
+  taxableThreshold = 5000; // Different threshold for Khamenei
+}
