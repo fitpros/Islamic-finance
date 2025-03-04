@@ -1,0 +1,22 @@
+/* Custom Styles */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.text-green-500 {
+  color: #10B981;
+}
+
+.bg-gray-100 {
+  background-color: #F3F4F6;
+}
+
+.hidden {
+  display: none;
+}
+
+/* RTL Support for Urdu */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
