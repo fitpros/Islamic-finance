@@ -9,3 +9,14 @@
   "marja_khamenei": "رہبر معظم خامنہ ای",
   "select_marja": "مرجع منتخب کریں"
 }
+// Add these translations
+{
+  "select_category": "انکم کی قسم منتخب کریں",
+  "salary": "ماہانہ تنخواہ",
+  "gift": "تحفہ/گفٹ",
+  "inheritance": "ورثہ",
+  "property": "جائیداد کی فروخت",
+  "investment": "سرمایہ کاری کا منافع",
+  "other": "دیگر",
+  "primary_residence": "بنیادی رہائش (خُمس سے مستثنیٰ)"
+}
