@@ -62,3 +62,30 @@ document.getElementById('khumsForm').addEventListener('submit', (e) => {
 
 // Initial Render
 renderMaraja();
+// PDF جنریٹر (jsPDF لائبریری استعمال کریں)
+function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    doc.text(`خُمس رپورٹ (${maraja[currentMarja].name})`, 10, 10);
+    doc.text(`واجب خُمس: ${document.getElementById('khumsAmount').textContent}`, 10, 20);
+    doc.save('khums-report.pdf');
+}
+
+document.getElementById('downloadPDF').addEventListener('click', generatePDF);
+// Firebase Authentication مثال
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+const firebaseConfig = { /* آپ کی کنفیگریشن */ };
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// لاگ ان فنکشن
+async function login(email, password) {
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+        console.error("لاگ ان میں خرابی:", error);
+    }
+}
