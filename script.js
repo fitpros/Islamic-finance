@@ -127,3 +127,8 @@ document.getElementById('category').addEventListener('change', function() {
 if(selectedMarja === 'khamenei' && category === 'gift') {
   taxableThreshold = 5000; // Different threshold for Khamenei
 }
+// Test Case 1: Non-essential property sale
+category = 'property', amount = $50,000 → Khums = $10,000
+
+// Test Case 2: Essential property sale
+category = 'property', essential checked → Khums = $0
